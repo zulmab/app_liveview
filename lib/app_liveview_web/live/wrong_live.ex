@@ -1,28 +1,29 @@
 defmodule AppLiveviewWeb.WrongLive do
   use Phoenix.LiveView
 
+  #Este ejemplo se puede encontrar en el libro Programming Phoenix LiveView
   def mount(_params, _session, socket) do
     {
-    :ok,
-    assign(
-    socket,
-    score: 0,
-    message: "Guess a number."
-    )
+      :ok,
+      assign(
+        socket,
+        score: 0,
+        message: "Guess a number."
+      )
     }
   end
 
   def render(assigns) do
     ~L"""
-    <h1>Your score: <%= @score %></h1>
-    <h2>
-    <%= @message %>
-    </h2>
-    <h2>
-    <%= for n <- 1..10 do %>
-    <a href="#" phx-click="guess" phx-value-number="<%= n %>"><%= n %></a>
-    <% end %>
-    </h2>
+      <h1>Your score: <%= @score %></h1>
+      <h2>
+      <%= @message %>
+      </h2>
+      <h2>
+        <%= for n <- 1..10 do %>
+          <a href="#" phx-click="guess" phx-value-number="<%= n %>"><%= n %></a>
+        <% end %>
+      </h2>
     """
   end
 
@@ -31,11 +32,12 @@ defmodule AppLiveviewWeb.WrongLive do
     message = "Your guess: #{guess}. Wrong. Guess again. "
     score = socket.assigns.score - 1
     {
-    :noreply,
-    assign(
-    socket,
-    message: message,
-    score: score)}
+      :noreply,
+      assign(
+        socket,
+        message: message,
+        score: score)
+    }
   end
 
 end

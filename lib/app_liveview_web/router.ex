@@ -19,6 +19,7 @@ defmodule AppLiveviewWeb.Router do
 
     live "/", PageLive, :index
     live "/guess", WrongLive
+    live "/rangeliveview", RangeLive
   end
 
   # Other scopes may use custom stacks.
