@@ -7,8 +7,9 @@ defmodule AppLiveviewWeb.RangeLive do
     :ok,
     assign(
     socket,
-    time:  1,
-    progress: 1,
+    time:  100,
+    init_request: true,
+    request: [1],
     message: "....",
     message2: "Sending every 100 ms to server"
     )
@@ -20,12 +21,13 @@ defmodule AppLiveviewWeb.RangeLive do
   end
 
   def handle_info(:update, socket) do
-    Process.send_after(self(), :reset, 100 )
+    Process.send_after(self(), :reset, socket.assigns.time )
     {
       :noreply,
       assign(
       socket,
-      progress: 100
+      init_request: true,
+      request: [1 | socket.assigns.request]
       )
     }
   end
@@ -39,7 +41,7 @@ defmodule AppLiveviewWeb.RangeLive do
       :noreply,
       assign(
         socket,
-        progress: 0
+        init_request: false
       )
     }
   end

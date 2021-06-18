@@ -9,34 +9,30 @@
     width: 10rem !important;
     text-align: center;
 }
+.requestcs {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: #F05423;
+  border-radius: 10px;
+  top: 90px;
+  opacity: 0;
+  animation-name: send-request;
+  animation-duration: 1s;
+}
 
+.rangems {
+  display: flex;
+  
+}
 
-.slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 15px;
-    border-radius: 5px;  
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
+@keyframes send-request {
+  0% {
+    left: 37%;
+    opacity: 1;
   }
-  
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%; 
-    background: #F05423;
-    cursor: pointer;
+  50% {
+    left: 61%;
   }
-  
-  .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #F05423;
-    cursor: pointer;
-  }
+}
+

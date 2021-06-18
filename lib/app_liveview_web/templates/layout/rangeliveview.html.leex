@@ -14,9 +14,11 @@
 
       <div class="col-lg-2">
         <h3 class="display-5 text-center phoenix"> Request </h3>
-        <div class="slidecontainer">
-          <input type="range" min="1" max="100" value="<%= @progress %>" class="slider" id="myRange">
-        </div>
+
+        <%= for _n <- @request do %>
+          <div class="requestcs"></div>
+        <% end %>
+        <hr class="line" />
       </div>
 
       <div class="card">
@@ -32,9 +34,14 @@
 
 
       <div class="row justify-content-md-center">
-        <div class="col-lg-4">
+        <div class="col-lg-3">
           <label for="customRange1" class="form-label" >select time range</label>
           <input type="range" min="100" max="1000" class="form-range" id="customRange1" value="<%= @time %>" phx-click="onChange">
+          <div class="rangems">
+            <div  style="margin-right: 105px"> 100ms</div>
+            <div  style="margin-right: 135px">500ms</div>
+            <div   > 1000ms</div>
+          </div>
         </div>
 
       </div>
