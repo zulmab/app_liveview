@@ -1,0 +1,42 @@
+<div class="container ">
+
+    <div class="row">
+      <h1 class="display-3 text-center bg-light">Client-to-Server Request</h1>
+    </div>
+
+    <div class="row justify-content-md-center">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Client</h5>
+        </div>
+      </div>
+
+      <div class="col-lg-2">
+        <h3 class="display-5 text-center phoenix"> Request </h3>
+        <div class="slidecontainer">
+          <input type="range" min="1" max="100" value="<%= @progress %>" class="slider" id="myRange">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Server</h5>
+        </div>
+      </div>
+    </div>
+
+    <h2>
+      <%= @message2 %>
+    </h2>
+
+
+      <div class="row justify-content-md-center">
+        <div class="col-lg-4">
+          <label for="customRange1" class="form-label" >select time range</label>
+          <input type="range" min="100" max="1000" class="form-range" id="customRange1" value="<%= @time %>" phx-click="onChange">
+        </div>
+
+      </div>
+
+  </div>
